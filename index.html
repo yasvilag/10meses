@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>10 Meses de Nós Dois ❤️</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    font-family:'Patrick Hand',cursive;
+    background:linear-gradient(
+    180deg,
+    #dff4ff,
+    #fff7c7
+    );
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+}
+
+.title{
+    font-size:4rem;
+    color:#f2a400;
+}
+
+.subtitle{
+    font-size:1.5rem;
+}
+
+.egg{
+    font-size:5rem;
+    cursor:pointer;
+    transition:.4s;
+    display:inline-block;
+    animation:balancar 3s ease-in-out infinite;
+}
+
+.egg:hover{
+    transform:scale(1.15);
+}
+
+@keyframes balancar{
+    0%{transform:rotate(-3deg);}
+    50%{transform:rotate(3deg);}
+    100%{transform:rotate(-3deg);}
+}
+
+.message{
+    display:none;
+}
+
+#eggSection{
+    display:none;
+}
+
+#finalSection{
+    display:none;
+}
+
+.cardMessage{
+    background:white;
+    border-radius:20px;
+    padding:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    margin-top:10px;
+}
+
+.hearts::before{
+    content:"💛 💕 💛 💕 💛";
+    position:fixed;
+    bottom:-50px;
+    left:0;
+    width:100%;
+    text-align:center;
+    font-size:2rem;
+    animation:subir 15s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes subir{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+.foto{
+  display:block;
+  margin:0 auto;
+  width: 300px;
+}
+
+#pintinho-corredor{
+    position:fixed;
+    pointer-events:none;
+    font-size:40px;
+    z-index:9999;
+    transition:.15s linear;
+}
+
+.pegada{
+
+position:fixed;
+
+font-size:20px;
+
+pointer-events:none;
+
+opacity:.7;
+
+animation:sumir 2s forwards;
+
+}
+
+@keyframes sumir{
+
+from{
+opacity:.7;
+}
+
+to{
+opacity:0;
+transform:scale(.5);
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<section class="hero" id="intro">
+
+<div class="container">
+
+<h1 class="title">
+🐣 10 Meses Juntos 🐣
+</h1>
+
+<div class="mt-4">
+    <h3>💛 Estamos juntos há:</h3>
+    <h2 id="contadorDias"></h2>
+</div>
+
+<p class="subtitle">
+Assim como dois pintinhos descobrindo o mundo,
+cada dia ao seu lado é uma nova aventura.
+</p>
+
+<button
+class="btn btn-warning btn-lg"
+onclick="entrar()">
+Entrar no Nosso Ninho ❤️
+</button>
+
+</div>
+
+</section>
+
+<section id="eggSection" class="container py-5">
+
+<h2 class="text-center mb-3">
+🥚 O Ninho das Memórias
+</h2>
+
+<p class="text-center">
+Ovos abertos:
+<span id="contador">0</span>/10
+</p>
+
+<div class="row">
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,0)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,1)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,2)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,3)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,4)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,5)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,6)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,7)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-4 text-center mb-4">
+<div class="egg" onclick="abrir(this,8)">🥚</div>
+<div class="message"></div>
+</div>
+
+<div class="col-md-12 text-center mb-4">
+<div class="egg" onclick="abrir(this,9)">🥚</div>
+<div class="message"></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="finalSection" class="container py-5">
+
+<h1 class="text-center mb-4">
+🎁 Presente Final 🎁
+</h1>
+
+<img
+    src="foto-final.jpeg"
+    class="foto"
+    class="img-fluid rounded shadow mb-4"
+    style="max-width:400px"
+    alt="Nós dois">
+
+<div class="card p-4">
+
+<h3>
+Minha Carta Para Você ❤️
+</h3>
+
+<p>
+10 meses com você meu pinto! 🐣💛 <br>
+Meu amor, desde que comecei a me relacionar com você, cada vez mais eu tenho a vontade de viver novas
+experiências, de conhecer novos lugares e de explorar o mundo ao seu lado. Você me ensinou muitas coisas, 
+e eu sou grata por cada um desses ensinamentos. A cada dia que passa, eu me sinto mais feliz e realizada
+por ter você na minha vida. Obrigado por sempre me incentivar e me apoiar em todas as coisas novas que 
+eu quero fazer, mesmo muitas das vezes eu mesma desistindo kkkk. Você me desperta a vontade de explorar
+e descobrir novas coisas novas, me mostrou novos lados meu que eu nem fazia ideia da existência, você
+me faz sentir viva e me faz querer viver cada dia ao máximo. E acho que nesses 10 meses, além de todos
+os momentos de amor, diversão e companherismo também tivemos muitos momentos de aprendizado e descoberta
+um com o outro. Esses momentos me fazem sentir que nosso relacionamento é muito mais do que apenas estar 
+juntos, mas sim crescer e evoluir juntos. Saiba que eu sempre vou estar ao seu lado, te apoiando e te 
+incentivando em tudo o que você quiser. Que a gente possa viver novas experiências, e sempre juntos. 
+Eu quero continuar descobrindo novos lugares, criando lembranças e sempre sendo feliz com você. Eu sei que
+muitas das vezes você se sente culpado por não conseguir me proporcionar algumas coisas ou por me deixar 
+triste, mas nós estamos nessa vida juntos, é nossa primeira experiência em lidar com alguém, e eu sei que 
+você não faz por mal, nós estamos aprendendo juntos, crescendo juntos e passando por momentos difíceis 
+juntos. Que a gente continue descobrindo novos lugares, criando memórias e encontrando felicidade nas 
+pequenas coisas, que é algo que a gente faz muito bem. Eu quero que você saiba que eu te amo muito, e que
+eu sou muito grata por ter você na minha vida. Ainda temos um mundo inteiro para explorar, e eu adoro pensar
+em tudo que iremos construir juntos.<br>
+
+Feliz 10 meses, meu amor! 💛
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+const mensagens = [
+
+"Um dia inesquecível foi quando fomos no jogo do inter juntos.",
+"Meu amor, eu te admiro muito por toda sua paciência e carinho comigo.",
+"Uma aventura que eu quero viver com você é fazermos uma trilha juntos.",
+"Vale piquinique e assistir o pôr do sol juntos na praia.",
+"Uma memória muito divertida foi quando fomos no show do Menos é mais.",
+"Meu pintinho, eu amo muito a sua dedicação e esforço para me fazer feliz e para realizar seus sonhos.",
+"Algum dia quero que a gente vá em uma cachoeira juntos. ",
+"Vale cinema no ninho, com cobertor, pipoca e o filme que você escolher.",
+"Uma memória que eu amo é quando nós estávamos no mar e nos beijamos, foi um momento muito especial.",
+"Meu amor, eu quero te agradecer por todas as coisas que fizeste por mim nesses 10 meses, eu te amo muito e espero continuar explorando o mundo com você. Você é a melhor coisa que já me aconteceu e eu sou muito grata por ter você na minha vida. ❤️"
+
+];
+
+let total = 0;
+function entrar(){
+
+document.getElementById("intro").style.display="none";
+
+document.getElementById("eggSection").style.display="block";
+
+document.getElementById("musica").play();
+
+}
+
+function abrir(ovo,index){
+
+if(ovo.dataset.aberto) return;
+
+ovo.dataset.aberto=true;
+
+ovo.innerHTML="🐣";
+
+const box = ovo.parentElement.querySelector(".message");
+
+box.style.display="block";
+
+box.innerHTML=
+`<div class="cardMessage">
+${mensagens[index]}
+</div>`;
+
+total++;
+
+document.getElementById("contador").innerText=total;
+
+if(total===10){
+
+document.getElementById("finalSection").style.display="block";
+
+document.getElementById("finalSection")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+}
+
+function atualizarContador() {
+
+    const inicio = new Date("2026-01-10T17:30:00");
+
+    const agora = new Date();
+
+    const diferenca = agora - inicio;
+
+    const dias = Math.floor(diferenca / 86400000);
+
+    const horas = Math.floor(
+        (diferenca % 86400000) / 3600000
+    );
+
+    const minutos = Math.floor(
+        (diferenca % 3600000) / 60000
+    );
+
+    document.getElementById("contadorDias").innerHTML =
+        `${dias} dias, ${horas} horas e ${minutos} minutos`;
+}
+
+atualizarContador();
+
+setInterval(atualizarContador, 60000);
+
+const dataLiberacao = new Date("2026-11-10T00:00:00");
+const agora = new Date();
+
+if (agora < dataLiberacao) {
+    document.body.innerHTML = `
+        <div style="text-align:center;padding:100px;">
+            <h1>🥚</h1>
+            <h2>O pintinho ainda não chocou...</h2>
+            <p>Volte em 10/11/2026 ❤️</p>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
